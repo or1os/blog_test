@@ -30,3 +30,12 @@ from django.views.generic.edit import UpdateView
 class Update(UpdateView):
     model = Post
     fields = ["title", "body", "category", "tags"]
+
+
+from django.views.generic.edit import DeleteView
+
+class Delete(DeleteView):
+    model = Post
+    
+    # 削除したあとに移動する先（トップページ）
+    success_url = "/"
